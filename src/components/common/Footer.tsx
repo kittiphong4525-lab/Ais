@@ -82,7 +82,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAdminAuth }) =
             </div>
             <div>
               <p className="font-extrabold text-white text-xs sm:text-sm drop-shadow-xs">บริการรวดเร็ว ปรึกษาฟรี</p>
-              <p className="text-xs sm:text-sm text-white font-black font-mono tracking-wide drop-shadow-sm">โทร 093-551-5442</p>
+              <p className="text-xs sm:text-sm text-white font-black font-mono tracking-wide drop-shadow-sm">โทร 062-193-9199</p>
             </div>
           </div>
         </div>
@@ -201,10 +201,24 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAdminAuth }) =
             </p>
             <div className="space-y-2.5">
               <a
-                href="tel:0935515442"
+                href="tel:0621939199"
                 className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-900/90 hover:bg-emerald-950/80 border border-emerald-500/40 hover:border-emerald-400 text-white transition-all shadow-sm hover:scale-[1.01] group"
               >
                 <div className="w-8 h-8 rounded-lg bg-emerald-500 text-slate-950 flex items-center justify-center font-bold shrink-0 shadow-xs">
+                  <PhoneCall className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="flex-1 flex items-center">
+                  <span className="text-base sm:text-lg font-bold text-white tracking-wide font-mono">
+                    062-193-9199
+                  </span>
+                </div>
+              </a>
+
+              <a
+                href="tel:0935515442"
+                className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-900/90 hover:bg-emerald-950/80 border border-slate-700 hover:border-emerald-400 text-white transition-all shadow-sm hover:scale-[1.01] group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-slate-800 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-bold shrink-0 shadow-xs">
                   <PhoneCall className="w-4 h-4 group-hover:scale-110 transition-transform" />
                 </div>
                 <div className="flex-1 flex items-center">

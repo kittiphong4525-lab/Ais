@@ -259,7 +259,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <div className="pt-3 border-t border-emerald-500/20 grid grid-cols-2 gap-2">
               <a
-                href="tel:0935515442"
+                href="tel:0621939199"
                 className={`py-3 px-4 rounded-xl border text-xs font-bold flex items-center justify-center gap-2 transition-colors ${
                   isDark
                     ? 'bg-slate-950/80 border-emerald-500/30 text-white hover:bg-emerald-950/50'
@@ -267,7 +267,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 }`}
               >
                 <PhoneCall className="w-4 h-4 text-emerald-500" />
-                <span>093-551-5442</span>
+                <span>062-193-9199</span>
               </a>
               <a
                 href="https://line.me/ti/p/@aisfibre999"

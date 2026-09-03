@@ -18,11 +18,29 @@ export const FloatingContact: React.FC<FloatingContactProps> = ({ onNavigate, on
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
           </div>
 
+          {/* Phone Number 1: 062-193-9199 */}
           <a
-            href="tel:0935515442"
-            className="flex items-center gap-3 px-3.5 py-2.5 rounded-2xl bg-gradient-to-r from-slate-800 to-emerald-950/80 hover:from-slate-700 hover:to-emerald-900 border-2 border-emerald-500/50 text-white transition-all text-sm font-semibold group shadow-md"
+            href="tel:0621939199"
+            className="flex items-center gap-3 px-3.5 py-2.5 rounded-2xl bg-gradient-to-r from-slate-800 to-emerald-950/80 hover:from-slate-700 hover:to-emerald-900 border-2 border-emerald-500/60 text-white transition-all text-sm font-semibold group shadow-md"
+            title="โทร 062-193-9199"
+            id="floating-call-062"
           >
             <div className="w-8 h-8 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center font-bold group-hover:scale-110 transition-transform shrink-0">
+              <PhoneCall className="w-4 h-4 text-slate-950" />
+            </div>
+            <div className="flex items-center">
+              <span className="font-extrabold text-white text-base font-mono tracking-wide">062-193-9199</span>
+            </div>
+          </a>
+
+          {/* Phone Number 2: 093-551-5442 */}
+          <a
+            href="tel:0935515442"
+            className="flex items-center gap-3 px-3.5 py-2.5 rounded-2xl bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-700 hover:to-slate-800 border-2 border-emerald-500/40 hover:border-emerald-400 text-white transition-all text-sm font-semibold group shadow-md"
+            title="โทร 093-551-5442"
+            id="floating-call-093"
+          >
+            <div className="w-8 h-8 rounded-xl bg-slate-800 text-emerald-400 border border-emerald-500/40 flex items-center justify-center font-bold group-hover:scale-110 transition-transform shrink-0">
               <PhoneCall className="w-4 h-4" />
             </div>
             <div className="flex items-center">

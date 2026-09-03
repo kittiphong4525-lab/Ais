@@ -7,6 +7,7 @@ import { Navbar } from './components/common/Navbar';
 import { BottomNavigation } from './components/common/BottomNavigation';
 import { Footer } from './components/common/Footer';
 import { FloatingContact } from './components/common/FloatingContact';
+import { AboutUsModal } from './components/common/AboutUsModal';
 
 // Frontend Pages
 import { HomePage } from './pages/HomePage';
@@ -47,6 +48,18 @@ function MainApp() {
   const [nav, setNav] = useState<NavigationState>({ path: '/' });
   const [adminTab, setAdminTab] = useState<string>('dashboard');
   const [showSecretAuthModal, setShowSecretAuthModal] = useState<boolean>(false);
+  const [showAboutModal, setShowAboutModal] = useState<boolean>(() => {
+    try {
+      const hiddenDate = localStorage.getItem('ais_hide_about_popup_date');
+      const todayStr = new Date().toISOString().split('T')[0];
+      if (hiddenDate === todayStr) {
+        return false;
+      }
+    } catch (e) {
+      // ignore
+    }
+    return true;
+  });
 
   useEffect(() => {
     FirestoreSyncService.initFirestoreSync();
@@ -259,6 +272,13 @@ function MainApp() {
           setShowSecretAuthModal(false);
           handleNavigate('/admin/dashboard');
         }}
+      />
+
+      {/* About Us Official Dealer Popup (Shows on first visit) */}
+      <AboutUsModal
+        isOpen={showAboutModal && !isAdminRoute}
+        onClose={() => setShowAboutModal(false)}
+        onNavigate={handleNavigate}
       />
 
       {/* Bottom Floating Contact Hotline & Line */}

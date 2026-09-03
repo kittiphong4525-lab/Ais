@@ -88,16 +88,30 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             {/* Direct Cards */}
             <div className="space-y-3">
               <a
-                href="tel:0935515442"
-                className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-slate-950 to-emerald-950/40 border-2 border-emerald-500/50 hover:border-emerald-400 text-slate-200 transition-all group shadow-md"
+                href="tel:0621939199"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-950/60 to-slate-950 border-2 border-emerald-400 hover:border-emerald-300 text-slate-200 transition-all group shadow-md"
               >
-                <div className="w-12 h-12 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center group-hover:scale-110 transition-transform font-bold shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-emerald-400 text-slate-950 flex items-center justify-center group-hover:scale-110 transition-transform font-black shrink-0">
+                  <PhoneCall className="w-6 h-6 animate-pulse" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-emerald-300">โทรศัพท์ติดต่อฝ่ายขาย (สายด่วน)</p>
+                  <p className="text-xl sm:text-2xl font-black text-white font-mono tracking-wide">062-193-9199</p>
+                  <p className="text-xs text-slate-300">โทรปรึกษาและสมัครติดตั้งได้ทันที</p>
+                </div>
+              </a>
+
+              <a
+                href="tel:0935515442"
+                className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-slate-950 to-emerald-950/40 border border-emerald-500/30 hover:border-emerald-400 text-slate-200 transition-all group shadow-sm"
+              >
+                <div className="w-12 h-12 rounded-xl bg-slate-800 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform font-bold shrink-0">
                   <PhoneCall className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-emerald-300">โทรศัพท์ติดต่อฝ่ายขาย (ด่วน)</p>
-                  <p className="text-xl sm:text-2xl font-black text-white font-mono tracking-wide">093-551-5442</p>
-                  <p className="text-xs text-slate-300">โทรปรึกษาและสมัครติดตั้งได้ทันที</p>
+                  <p className="text-xs font-semibold text-slate-400">โทรศัพท์สำนักงานตัวแทน</p>
+                  <p className="text-lg font-bold text-white font-mono tracking-wide">093-551-5442</p>
+                  <p className="text-xs text-slate-400">ติดต่อสอบถามข้อมูลทั่วไป</p>
                 </div>
               </a>
 
