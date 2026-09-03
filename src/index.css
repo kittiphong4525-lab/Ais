@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Sarabun', 'Noto Serif Thai', 'Prompt', sans-serif;
+  --font-serif: 'Noto Serif Thai', 'Sarabun', serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    font-family: 'Sarabun', 'Noto Serif Thai', 'Prompt', sans-serif;
+  }
+  body, html {
+    font-family: 'Sarabun', 'Noto Serif Thai', 'Prompt', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  html.dark, html.dark body {
+    background-color: #000000;
+    color: #f8fafc;
+  }
+  html.light, html.light body {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+  button, input, select, textarea {
+    font-family: inherit;
+  }
+}
+
+/* ============================================================
+   LIGHT MODE CONTRAST & TYPOGRAPHY SYSTEM
+   Ensures all text, headings, cards, inputs, and components 
+   have optimal readability and high contrast in Light Mode.
+   ============================================================ */
+
+/* 1. Global Light Headings and Typography */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #0f172a;
+}
+
+html.light p,
+html.light label {
+  color: #334155;
+}
+
+/* 2. Text Color Overrides for Light Mode (except inside colorful gradient cards & buttons) */
+html.light :not(.bg-gradient-to-br):not(.bg-gradient-to-r):not(button.bg-emerald-500):not(button.bg-emerald-600):not(button.bg-orange-500):not(button.bg-orange-600):not(a.bg-gradient-to-r):not(a.bg-emerald-500):not(a.bg-emerald-600):not(a.bg-\[\#06C755\]):not(.text-slate-950) > .text-white {
+  color: #0f172a;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200 {
+  color: #1e293b;
+}
+
+html.light .text-slate-300 {
+  color: #334155;
+}
+
+html.light .text-slate-400 {
+  color: #475569;
+}
+
+html.light .text-slate-500 {
+  color: #64748b;
+}
+
+/* 3. Surface & Card Overrides in Light Mode */
+html.light .bg-slate-950,
+html.light .bg-slate-900,
+html.light .bg-\[\#0e151d\],
+html.light .bg-\[\#080d12\] {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+html.light .bg-slate-950\/30,
+html.light .bg-slate-950\/35,
+html.light .bg-slate-950\/40,
+html.light .bg-slate-950\/50,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/90,
+html.light .bg-slate-900\/50,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/90,
+html.light .bg-\[\#0e151d\]\/90 {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* 4. Borders in Light Mode */
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-700,
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: #e2e8f0;
+}
+
+/* 5. Inputs, Selects, and Form Elements in Light Mode */
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #64748b !important;
+}
+
+html.light select option {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+/* 6. Footer in Light Mode */
+html.light footer {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light footer .text-white {
+  color: #0f172a !important;
+}
+
+html.light footer .text-slate-200,
+html.light footer .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light footer .text-slate-400,
+html.light footer .text-slate-500 {
+  color: #475569 !important;
+}
+
+html.light footer a:hover,
+html.light footer button:hover {
+  color: #059669 !important;
+}
+
+/* Keep gradient cards & trust badge text inside footer crisp and white */
+html.light footer .bg-gradient-to-br .text-white,
+html.light footer .bg-gradient-to-br p,
+html.light footer .bg-gradient-to-br span {
+  color: #ffffff !important;
+}
+
+/* 7. Preserve white text for colorful gradient cards and buttons */
+html.light .bg-gradient-to-br .text-white,
+html.light .bg-gradient-to-r.text-white,
+html.light button.bg-gradient-to-r,
+html.light a.bg-gradient-to-r,
+html.light .bg-\[\#06C755\],
+html.light .bg-orange-500,
+html.light .bg-emerald-600 {
+  color: #ffffff;
+}
+
+/* Dual-tone heading colors in light mode for crisp readability */
+html.light .text-lime-300 {
+  color: #15803d !important;
+  filter: none !important;
+}
+
+html.light .text-\[\#FF5500\] {
+  color: #ea580c !important;
+  filter: none !important;
+}
+
+/* 8. Light Mode Scrollbar */
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}
+
+/* 9. Hero Dimming in Light Mode */
+html.light .hero .bg-slate-950\/45 {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.sarabun-font {
+  font-family: 'Sarabun', sans-serif;
+}
+
+.noto-serif-thai {
+  font-family: "Noto Serif Thai", 'Sarabun', serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* User requested Card Class */
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 28px;
+
+  padding: 28px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 28px 65px rgba(0, 0, 0, 0.18);
+}
+
+/* User requested Hero Gradient */
+.hero-gradient {
+  background: linear-gradient(
+    180deg,
+    #38DC0D 0%,
+    #7BD918 18%,
+    #D4DC48 35%,
+    #D2AF29 50%,
+    #EA7827 70%,
+    #EC4519 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.google-sans-font {
+  font-family: 'Ramabhadra', 'Noto Serif Thai', sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #10b981;
+}

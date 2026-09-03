@@ -1,0 +1,10 @@
+{
+  "name": "Remix Remix AIS 3BB FIBRE 3 - เน็ตบ้านไฟเบอร์อัจฉริยะ อันดับ 1",
+  "description": "เว็บไซต์สมัครและเช็คพื้นที่ติดตั้ง AIS FIBRE 3 รวมแพ็กเกจเน็ตบ้านไฟเบอร์แท้ 100% โปรโมชั่นย้ายค่าย และระบบสลับสปีดอัจฉริยะ",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

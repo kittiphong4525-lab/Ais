@@ -1,0 +1,256 @@
+{
+  "entities": {
+    "packages": {
+      "title": "Packages",
+      "description": "AIS Fibre Packages list",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "price": { "type": "number" },
+        "originalPrice": { "type": "number" },
+        "download_speed": { "type": "number" },
+        "upload_speed": { "type": "number" },
+        "contract_month": { "type": "number" },
+        "installation_fee": { "type": "number" },
+        "description": { "type": "string" },
+        "features": { "type": "array" },
+        "equipment": { "type": "array" },
+        "category": { "type": "string" },
+        "badge": { "type": "string" },
+        "image": { "type": "string" },
+        "active": { "type": "boolean" },
+        "start_date": { "type": "string" },
+        "end_date": { "type": "string" },
+        "recommendedFor": { "type": "string" },
+        "tvIncluded": { "type": "boolean" }
+      },
+      "required": ["id", "name", "price"]
+    },
+    "promotions": {
+      "title": "Promotions",
+      "description": "Special promotions and campaigns",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "description": { "type": "string" },
+        "image": { "type": "string" },
+        "start_date": { "type": "string" },
+        "end_date": { "type": "string" },
+        "cta_text": { "type": "string" },
+        "cta_link": { "type": "string" },
+        "badge": { "type": "string" },
+        "active": { "type": "boolean" },
+        "highlight": { "type": "boolean" }
+      },
+      "required": ["id", "title"]
+    },
+    "banners": {
+      "title": "Banners",
+      "description": "Hero slider and promotional banners",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "description": { "type": "string" },
+        "image": { "type": "string" },
+        "mobile_image": { "type": "string" },
+        "badge": { "type": "string" },
+        "cta_text": { "type": "string" },
+        "cta_link": { "type": "string" },
+        "link_type": { "type": "string" },
+        "position": { "type": "string" },
+        "order": { "type": "number" },
+        "active": { "type": "boolean" },
+        "bg_gradient": { "type": "string" },
+        "start_date": { "type": "string" },
+        "end_date": { "type": "string" },
+        "created_at": { "type": "string" }
+      },
+      "required": ["id", "title", "image"]
+    },
+    "leads": {
+      "title": "Leads",
+      "description": "Customer leads from coverage checker and inquiries",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "lead_no": { "type": "string" },
+        "tracking_id": { "type": "string" },
+        "created_at": { "type": "string" },
+        "customer_name": { "type": "string" },
+        "phone": { "type": "string" },
+        "province": { "type": "string" },
+        "district": { "type": "string" },
+        "subdistrict": { "type": "string" },
+        "address_detail": { "type": "string" },
+        "status": { "type": "string" },
+        "source": { "type": "string" },
+        "package_name": { "type": "string" }
+      },
+      "required": ["id", "customer_name", "phone"]
+    },
+    "applications": {
+      "title": "Applications",
+      "description": "Customer installation applications",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "application_no": { "type": "string" },
+        "created_at": { "type": "string" },
+        "first_name": { "type": "string" },
+        "last_name": { "type": "string" },
+        "phone": { "type": "string" },
+        "package_name": { "type": "string" },
+        "package_price": { "type": "number" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "application_no", "first_name", "phone"]
+    },
+    "equipment": {
+      "title": "Equipment",
+      "description": "Hardware and router devices",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "model": { "type": "string" },
+        "image": { "type": "string" }
+      }
+    },
+    "articles": {
+      "title": "Articles",
+      "description": "Guides and knowledgebase articles",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "content": { "type": "string" },
+        "image": { "type": "string" }
+      }
+    },
+    "faqs": {
+      "title": "FAQs",
+      "description": "Frequently asked questions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "question": { "type": "string" },
+        "answer": { "type": "string" },
+        "category": { "type": "string" }
+      }
+    },
+    "settings": {
+      "title": "Store Settings",
+      "description": "General store & contact configuration",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "store_name": { "type": "string" },
+        "phone_primary": { "type": "string" },
+        "line_id": { "type": "string" }
+      }
+    },
+    "about": {
+      "title": "About Company",
+      "description": "Company registration and certificates",
+      "type": "object",
+      "properties": {
+        "company_name": { "type": "string" },
+        "tax_id": { "type": "string" }
+      }
+    },
+    "notifications": {
+      "title": "Notifications",
+      "description": "System alerts and lead reminders",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" }
+      }
+    },
+    "contact_messages": {
+      "title": "Contact Messages",
+      "description": "Customer contact form messages",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "message": { "type": "string" }
+      }
+    },
+    "admin_users": {
+      "title": "Admin Users",
+      "description": "Staff and admin accounts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/packages/{packageId}": {
+      "schema": "packages",
+      "description": "Package documents"
+    },
+    "/promotions/{promoId}": {
+      "schema": "promotions",
+      "description": "Promotion documents"
+    },
+    "/banners/{bannerId}": {
+      "schema": "banners",
+      "description": "Banner documents"
+    },
+    "/leads/{leadId}": {
+      "schema": "leads",
+      "description": "Lead documents"
+    },
+    "/applications/{appId}": {
+      "schema": "applications",
+      "description": "Application documents"
+    },
+    "/equipment/{eqId}": {
+      "schema": "equipment",
+      "description": "Equipment documents"
+    },
+    "/articles/{artId}": {
+      "schema": "articles",
+      "description": "Article documents"
+    },
+    "/faqs/{faqId}": {
+      "schema": "faqs",
+      "description": "FAQ documents"
+    },
+    "/settings/{settingId}": {
+      "schema": "settings",
+      "description": "Store settings document"
+    },
+    "/about/{aboutId}": {
+      "schema": "about",
+      "description": "About company document"
+    },
+    "/notifications/{notifId}": {
+      "schema": "notifications",
+      "description": "Notification documents"
+    },
+    "/contact_messages/{msgId}": {
+      "schema": "contact_messages",
+      "description": "Contact message documents"
+    },
+    "/admin_users/{userId}": {
+      "schema": "admin_users",
+      "description": "Admin and staff users"
+    }
+  }
+}
