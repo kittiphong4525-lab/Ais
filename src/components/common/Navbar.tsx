@@ -86,27 +86,34 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Top Green to Orange Gradient Bar */}
       <div className="h-[3.5px] w-full bg-gradient-to-r from-[#00A859] via-[#84CC16] via-[#F97316] to-[#FF5500] shadow-sm shadow-orange-500/40" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1 sm:py-1.5">
-        <div className="flex items-center justify-between h-[74px] sm:h-[78px] gap-4 md:gap-6 lg:gap-8 xl:gap-10">
+      <div className="w-full px-2.5 sm:px-4 md:px-6 lg:px-8 py-1 sm:py-1.5">
+        <div className="flex items-center justify-between min-h-[76px] sm:min-h-[84px] gap-2.5 sm:gap-4 md:gap-6">
           {/* Brand Logo & Name */}
           <button
             type="button"
             onClick={handleLogoClick}
-            className="flex items-center gap-3.5 text-left group cursor-pointer shrink-0"
+            className="flex items-center gap-3 sm:gap-4 text-left group cursor-pointer shrink-0 pl-1 sm:pl-2"
             title="AIS FIBRE 3 By โฮมไฟเบอร์เนต999"
+            id="navbar-brand-logo-btn"
           >
-            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-emerald-500 via-lime-400 to-[#FF5500] flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 group-hover:shadow-orange-500/30 transition-all duration-300">
-              <Wifi className="w-6 h-6 text-slate-950 stroke-[2.5]" />
+            {/* Big & Transparent Logo Container */}
+            <div className="h-13 sm:h-16 md:h-18 lg:h-20 w-auto flex items-center justify-center bg-transparent group-hover:scale-105 transition-transform duration-300 shrink-0">
+              <img
+                src="/logo.png"
+                alt="AIS FIBRE 3 By โฮมไฟเบอร์เนต999"
+                className="h-13 sm:h-16 md:h-18 lg:h-20 w-auto max-h-full object-contain bg-transparent drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
+                referrerPolicy="no-referrer"
+              />
             </div>
-            <div className="space-y-0.5">
-              <div className="flex items-center gap-2">
-                <span className={`text-xl sm:text-[22px] font-black tracking-tight flex items-center ${
+            <div className="flex flex-col justify-center items-start space-y-0.5 my-auto">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className={`text-xl sm:text-2xl md:text-[26px] font-black tracking-tight flex items-center leading-tight ${
                   isDark ? 'text-white' : 'text-slate-900'
                 }`}>
                   AIS FIBRE<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-lime-500 to-[#FF7700] ml-1.5">3</span>
                 </span>
               </div>
-              <p className={`text-[11px] sm:text-xs font-medium leading-tight ${
+              <p className={`text-[11px] sm:text-xs md:text-sm font-semibold leading-tight tracking-wide ${
                 isDark ? 'text-emerald-300/90' : 'text-emerald-600'
               }`}>
                 By โฮมไฟเบอร์เนต999
@@ -227,6 +234,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
+            key="navbar-mobile-dropdown"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}

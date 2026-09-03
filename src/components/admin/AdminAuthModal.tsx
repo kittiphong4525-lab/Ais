@@ -309,6 +309,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
         <AnimatePresence>
           {error && (
             <motion.div
+              key="auth-error-msg"
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
@@ -320,6 +321,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
           )}
           {isSuccess && (
             <motion.div
+              key="auth-success-msg"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               className="p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs flex items-center justify-center gap-2 font-bold"
@@ -344,7 +346,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div key="admin-auth-modal-overlay" className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

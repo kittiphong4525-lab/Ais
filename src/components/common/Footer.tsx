@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Wifi,
   PhoneCall,
   MessageCircle,
   MapPin,
@@ -95,8 +94,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAdminAuth }) =
               onClick={() => onNavigate('/')}
               className="flex items-center gap-3 cursor-pointer group select-none inline-flex"
             >
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-700 shadow-md shadow-emerald-950">
-                <Wifi className="w-5 h-5 text-slate-950 font-bold" />
+              <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-transparent overflow-hidden p-0.5 shrink-0">
+                <img
+                  src="/logo.png"
+                  alt="AIS FIBRE 3 โลโก้"
+                  className="w-full h-full object-contain drop-shadow-md"
+                />
               </div>
               <div>
                 <span className="text-lg font-black text-white tracking-tight">AIS FIBRE</span>

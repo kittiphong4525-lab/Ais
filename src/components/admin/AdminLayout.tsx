@@ -11,7 +11,6 @@ import {
   BarChart3,
   BookOpen,
   LogOut,
-  Wifi,
   ExternalLink,
   Bell,
   Menu,
@@ -92,8 +91,12 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
       {/* Mobile Top bar */}
       <div className="md:hidden flex items-center justify-between p-4 bg-slate-900 border-b border-slate-800 sticky top-0 z-40">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-emerald-500 text-slate-950 flex items-center justify-center font-black">
-            <Wifi className="w-4 h-4" />
+          <div className="w-9 h-9 rounded-lg bg-transparent overflow-hidden p-0.5 flex items-center justify-center shrink-0">
+            <img
+              src="/logo.png"
+              alt="AIS FIBRE Logo"
+              className="w-full h-full object-contain drop-shadow-md"
+            />
           </div>
           <div>
             <span className="font-bold text-sm text-white">AIS Net999</span>
@@ -130,8 +133,12 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({
         {/* Brand Header */}
         <div className="flex items-center justify-between border-b border-slate-800 pb-4">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-700 text-slate-950 flex items-center justify-center font-bold shadow-md shadow-emerald-950">
-              <Wifi className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-xl bg-transparent overflow-hidden p-0.5 flex items-center justify-center shrink-0">
+              <img
+                src="/logo.png"
+                alt="AIS FIBRE Logo"
+                className="w-full h-full object-contain drop-shadow-md"
+              />
             </div>
             <div>
               <div className="flex items-center gap-1.5">

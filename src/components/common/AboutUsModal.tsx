@@ -53,24 +53,30 @@ export const AboutUsModal: React.FC<AboutUsModalProps> = ({
     onNavigate('/about');
   };
 
-  if (!isOpen) return null;
-
   return (
-    <AnimatePresence>
-      <div
-        className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-md overflow-y-auto"
-        onClick={handleClose}
-        id="about-us-modal-backdrop"
-      >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.93, y: 15 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.93, y: 15 }}
-          transition={{ duration: 0.25, ease: 'easeOut' }}
-          className="relative w-full max-w-2xl bg-slate-900 border-2 border-emerald-500/40 rounded-3xl p-5 sm:p-7 shadow-2xl shadow-emerald-950/90 text-left my-auto overflow-hidden text-white"
-          onClick={(e) => e.stopPropagation()}
-          id="about-us-modal-container"
-        >
+    <>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            key="about-us-modal-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-md overflow-y-auto"
+            onClick={handleClose}
+            id="about-us-modal-backdrop"
+          >
+            <motion.div
+              key="about-us-modal-container"
+              initial={{ opacity: 0, scale: 0.93, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.93, y: 15 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+              className="relative w-full max-w-2xl bg-slate-900 border-2 border-emerald-500/40 rounded-3xl p-5 sm:p-7 shadow-2xl shadow-emerald-950/90 text-left my-auto overflow-hidden text-white"
+              onClick={(e) => e.stopPropagation()}
+              id="about-us-modal-container"
+            >
           {/* Top glowing gradient stripe */}
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-400 via-lime-400 to-teal-400" />
 
@@ -243,35 +249,49 @@ export const AboutUsModal: React.FC<AboutUsModalProps> = ({
               <span>ไม่ต้องแสดงป๊อปอัปนี้อีกในวันนี้</span>
             </label>
           </div>
-        </motion.div>
-      </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Lightbox Preview for enlarged Certificate */}
-      {previewDoc && (
-        <div
-          className="fixed inset-0 z-60 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
-          onClick={() => setPreviewDoc(null)}
-          id="certificate-lightbox-backdrop"
-        >
-          <div
-            className="relative max-w-2xl w-full max-h-[90vh] bg-white rounded-2xl overflow-hidden p-2 flex flex-col items-center shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {previewDoc && (
+          <motion.div
+            key="certificate-lightbox-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-60 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+            onClick={() => setPreviewDoc(null)}
+            id="certificate-lightbox-backdrop"
           >
-            <button
-              onClick={() => setPreviewDoc(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-slate-900/80 text-white hover:bg-slate-900 transition-colors shadow-lg z-10"
-              aria-label="ปิดภาพขยาย"
+            <motion.div
+              key="certificate-lightbox-card"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative max-w-2xl w-full max-h-[90vh] bg-white rounded-2xl overflow-hidden p-2 flex flex-col items-center shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
             >
-              <X className="w-5 h-5" />
-            </button>
-            <img
-              src={previewDoc}
-              alt="ใบอนุญาตฉบับเต็ม"
-              className="max-h-[85vh] w-auto object-contain bg-white"
-            />
-          </div>
-        </div>
-      )}
-    </AnimatePresence>
+              <button
+                onClick={() => setPreviewDoc(null)}
+                className="absolute top-4 right-4 p-2 rounded-full bg-slate-900/80 text-white hover:bg-slate-900 transition-colors shadow-lg z-10 cursor-pointer"
+                aria-label="ปิดภาพขยาย"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <img
+                src={previewDoc}
+                alt="ใบอนุญาตฉบับเต็ม"
+                className="max-h-[85vh] w-auto object-contain bg-white"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
