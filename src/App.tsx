@@ -249,7 +249,7 @@ function MainApp() {
       />
 
       {/* Main Page Body with Ambient Background Glow */}
-      <main className="flex-1 pb-16 md:pb-0 relative z-0 overflow-hidden">
+      <main className="flex-1 pb-24 lg:pb-0 relative z-0 overflow-hidden">
         {/* Global ambient background glow orbs (green, lime, and orange blurred circles) */}
         <div className={`fixed top-[-10%] left-[-5%] w-[45vw] h-[45vw] max-w-[600px] max-h-[600px] rounded-full blur-[120px] pointer-events-none -z-10 transition-opacity duration-300 ${
           isDark ? 'bg-emerald-500/10 opacity-100' : 'bg-emerald-500/15 opacity-60'

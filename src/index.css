@@ -9,6 +9,7 @@
   * {
     box-sizing: border-box;
     font-family: 'Sarabun', 'Noto Serif Thai', 'Prompt', sans-serif;
+    -webkit-tap-highlight-color: transparent;
   }
   body, html {
     font-family: 'Sarabun', 'Noto Serif Thai', 'Prompt', sans-serif;
@@ -17,6 +18,9 @@
     font-weight: 400;
     letter-spacing: 0.01em;
     transition: background-color 0.25s ease, color 0.25s ease;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
   }
   html.dark, html.dark body {
     background-color: #000000;
@@ -208,30 +212,48 @@ html.light .hero .bg-slate-950\/45 {
   font-style: normal;
 }
 
-/* User requested Card Class */
+/* User requested Card Class with Dark Mode & Responsive Padding */
 .card {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 
   border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 28px;
-
-  padding: 28px;
+  border-radius: 24px;
+  padding: 20px;
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.12);
+    0 16px 40px rgba(0, 0, 0, 0.08);
 
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-6px);
+@media (min-width: 640px) {
+  .card {
+    border-radius: 28px;
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  }
+}
 
+html.dark .card {
+  background: rgba(13, 22, 34, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+html.dark .card h3 {
+  color: #ffffff;
+}
+html.dark .card p {
+  color: #cbd5e1;
+}
+
+.card:hover {
+  transform: translateY(-4px);
   box-shadow:
-    0 28px 65px rgba(0, 0, 0, 0.18);
+    0 24px 55px rgba(0, 0, 0, 0.16);
 }
 
 /* User requested Hero Gradient */

@@ -10,7 +10,7 @@ export const FloatingContact: React.FC<FloatingContactProps> = ({ onNavigate, on
   const [expanded, setExpanded] = useState(true);
 
   return (
-    <div className="hidden md:flex fixed bottom-6 right-6 z-40 flex-col items-end gap-3 select-none">
+    <div className="hidden lg:flex fixed bottom-6 right-6 z-40 flex-col items-end gap-3 select-none">
       {expanded && (
         <div className="flex flex-col gap-2.5 bg-slate-900/95 backdrop-blur-xl p-3 rounded-3xl border border-emerald-500/30 shadow-2xl shadow-slate-950/80 animate-in fade-in slide-in-from-bottom-3 duration-200">
           <div className="text-[11px] font-bold text-slate-400 px-2 uppercase tracking-wider flex items-center justify-between gap-4">
