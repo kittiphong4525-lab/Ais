@@ -145,9 +145,9 @@ export const PackagesPage: React.FC<PackagesPageProps> = ({ onNavigate, initialC
           <Sparkles className="w-3.5 h-3.5" />
           <span>AIS 3BB FIBRE 3 PACKAGES 2026</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-snug">
-          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)]">🔥 รวมแพ็กเกจเน็ตบ้าน</span>{' '}
-          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)]">AIS 3BB FIBRE 3</span>
+        <h1 className="flex flex-row flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-5xl font-black tracking-tight leading-snug">
+          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)] shrink-0 whitespace-nowrap">🔥 รวมแพ็กเกจเน็ตบ้าน</span>
+          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)] shrink-0 whitespace-nowrap">AIS 3BB FIBRE 3</span>
         </h1>
         <p className="text-xs sm:text-sm text-slate-400 max-w-2xl mx-auto">
           ความเร็ว 200 - 2,000 Mbps พร้อมเราเตอร์ Wi-Fi 6 / Wi-Fi 7 และกล่อง AIS PLAYBOX สมัครวันนี้ฟรีค่าแรกเข้า 4,800 บาท

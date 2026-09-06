@@ -120,9 +120,9 @@ export const TrackApplicationPage: React.FC<TrackApplicationPageProps> = ({
           <Search className="w-3.5 h-3.5" />
           <span>STATUS TRACKING</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-snug">
-          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)]">ติดตามสถานะ</span>{' '}
-          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)]">คำขอติดตั้งเน็ตบ้าน</span>
+        <h1 className="flex flex-row flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-5xl font-black tracking-tight leading-snug">
+          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)] shrink-0 whitespace-nowrap">ติดตามสถานะ</span>
+          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)] shrink-0 whitespace-nowrap">คำขอติดตั้งเน็ตบ้าน</span>
         </h1>
         <p className="text-xs sm:text-sm text-slate-400">
           ตรวจสอบความคืบหน้าการเช็กคู่สาย และสถานะการนัดหมายทีมช่างแบบเรียลไทม์

@@ -234,16 +234,33 @@ export const StorageService = {
       !current ||
       current.company_name === 'บริษัท ดีเอ็มพี แอดวานซ์ โซลูชั่น เน็ตเวิร์ค จำกัด' ||
       !current.company_name ||
-      current.company_address?.includes('ศรีนครินทร์ 42')
+      current.company_address?.includes('ศรีนครินทร์ 42') ||
+      current.show_certificates === false
     ) {
       const merged: AboutUsSettings = {
         ...INITIAL_ABOUT_SETTINGS,
         ...(current || {}),
         company_name: INITIAL_ABOUT_SETTINGS.company_name,
         company_address: INITIAL_ABOUT_SETTINGS.company_address,
+        doc1_image: current?.doc1_image && !current.doc1_image.includes('DEFAULT_CERTIFICATE') && !current.doc1_image.includes('AWN')
+          ? current.doc1_image
+          : INITIAL_ABOUT_SETTINGS.doc1_image,
+        doc2_image: current?.doc2_image && !current.doc2_image.includes('DEFAULT_CERTIFICATE') && !current.doc2_image.includes('AWN')
+          ? current.doc2_image
+          : INITIAL_ABOUT_SETTINGS.doc2_image,
+        show_certificates: true,
       };
       saveToStorage(KEYS.ABOUT, merged);
       return merged;
+    }
+    if (current.show_certificates === undefined) {
+      current.show_certificates = true;
+    }
+    if (current.show_activities === undefined) {
+      current.show_activities = true;
+    }
+    if (!current.activity_images || current.activity_images.length === 0) {
+      current.activity_images = INITIAL_ABOUT_SETTINGS.activity_images;
     }
     return current;
   },

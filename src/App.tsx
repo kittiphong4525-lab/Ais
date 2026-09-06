@@ -35,7 +35,7 @@ import { AdminPromotionsPage } from './pages/admin/AdminPromotionsPage';
 import { AdminReportsPage } from './pages/admin/AdminReportsPage';
 import { AdminAboutPage } from './pages/admin/AdminAboutPage';
 import { SetupGuidePage } from './pages/SetupGuidePage';
-import { FirestoreSyncService } from './services/firestoreSync';
+import { initializeCloudDatabaseIfNeeded } from './services/api';
 
 interface NavigationState {
   path: string;
@@ -48,21 +48,21 @@ function MainApp() {
   const [nav, setNav] = useState<NavigationState>({ path: '/' });
   const [adminTab, setAdminTab] = useState<string>('dashboard');
   const [showSecretAuthModal, setShowSecretAuthModal] = useState<boolean>(false);
-  const [showAboutModal, setShowAboutModal] = useState<boolean>(() => {
-    try {
-      const hiddenDate = localStorage.getItem('ais_hide_about_popup_date');
-      const todayStr = new Date().toISOString().split('T')[0];
-      if (hiddenDate === todayStr) {
-        return false;
-      }
-    } catch (e) {
-      // ignore
-    }
-    return true;
-  });
+  const [showAboutModal, setShowAboutModal] = useState<boolean>(false);
 
   useEffect(() => {
-    FirestoreSyncService.initFirestoreSync();
+    initializeCloudDatabaseIfNeeded().catch(() => {});
+
+    // Automatically show About Us modal when opening the website if not dismissed for today
+    const todayStr = new Date().toISOString().split('T')[0];
+    const hideToday = localStorage.getItem('ais_hide_about_popup_date');
+    const isSpecialAdmin = window.location.pathname.startsWith('/admin') || nav.path.startsWith('/admin');
+    if (hideToday !== todayStr && !isSpecialAdmin) {
+      const timer = setTimeout(() => {
+        setShowAboutModal(true);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const isAdminRoute = nav.path.startsWith('/admin') || nav.path === '/setup-guide';

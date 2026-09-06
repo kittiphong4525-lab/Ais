@@ -45,9 +45,9 @@ export const PromotionsPage: React.FC<PromotionsPageProps> = ({ onNavigate }) =>
           <Flame className="w-3.5 h-3.5" />
           <span>SPECIAL CAMPAIGNS 2026</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-snug">
-          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)]">🔥 รวมโปรโมชั่นพิเศษ</span>{' '}
-          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)]">AIS FIBRE 3 ล่าสุด</span>
+        <h1 className="flex flex-row flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-5xl font-black tracking-tight leading-snug">
+          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)] shrink-0 whitespace-nowrap">🔥 รวมโปรโมชั่นพิเศษ</span>
+          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)] shrink-0 whitespace-nowrap">AIS FIBRE 3 ล่าสุด</span>
         </h1>
         <p className="text-xs sm:text-sm text-slate-400">
           รวมส่วนลดพิเศษ ย้ายค่ายลด 50%, ฟรีค่าแรกเข้า, แถมฟรีเราเตอร์ WiFi 6 และกล่อง PLAYBOX 4K

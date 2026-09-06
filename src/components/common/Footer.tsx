@@ -159,7 +159,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAdminAuth }) =
               </li>
               <li>
                 <button onClick={() => onNavigate('/about')} className="hover:text-emerald-400 transition-colors flex items-center gap-1.5 text-lime-300 font-semibold">
-                  <ChevronRight className="w-3.5 h-3.5 text-emerald-500" /> เกี่ยวกับเรา & ใบอนุญาตตัวแทน
+                  <ChevronRight className="w-3.5 h-3.5 text-emerald-500" /> เกี่ยวกับเรา
                 </button>
               </li>
               <li>

@@ -1,4 +1,4 @@
-import { AboutUsSettings } from '../types';
+import { AboutUsSettings, ActivityImage } from '../types';
 
 // High-fidelity vector representations of the official AWN / AIS Fibre 3 Dealer Authorization Documents
 // These serve as crisp default A4 documents matching the official certificates.
@@ -204,16 +204,90 @@ export const DEFAULT_CERTIFICATE_2 = `data:image/svg+xml;utf8,${encodeURICompone
 </svg>
 `)}`;
 
+export const BLANK_CERTIFICATE_1 = `data:image/svg+xml;utf8,${encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595 842" width="100%" height="100%">
+  <!-- Clean Blank A4 Canvas -->
+  <rect width="595" height="842" fill="#FAFAFA" />
+  <rect x="24" y="24" width="547" height="794" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="8 8" />
+  
+  <g transform="translate(297, 400)" text-anchor="middle" font-family="'Sarabun', 'Segoe UI', Tahoma, sans-serif">
+    <!-- Subtle Document Icon -->
+    <rect x="-36" y="-55" width="72" height="96" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2" />
+    <path d="M 6 -55 L 36 -25 L 36 -55 Z" fill="#E2E8F0" />
+    <line x1="-20" y1="-18" x2="12" y2="-18" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="-20" y1="-2" x2="20" y2="-2" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="-20" y1="14" x2="20" y2="14" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="-20" y1="30" x2="4" y2="30" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" />
+    
+    <!-- Placeholder Label -->
+    <text y="80" font-size="18" font-weight="bold" fill="#64748B">รูปภาพใบอนุญาต ฉบับที่ 1</text>
+    <text y="106" font-size="13" fill="#94A3B8">(พื้นที่สำหรับแสดงเอกสารใบอนุญาตตัวแทน A4)</text>
+  </g>
+</svg>
+`)}`;
+
+export const BLANK_CERTIFICATE_2 = `data:image/svg+xml;utf8,${encodeURIComponent(`
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 595 842" width="100%" height="100%">
+  <!-- Clean Blank A4 Canvas -->
+  <rect width="595" height="842" fill="#FAFAFA" />
+  <rect x="24" y="24" width="547" height="794" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="8 8" />
+  
+  <g transform="translate(297, 400)" text-anchor="middle" font-family="'Sarabun', 'Segoe UI', Tahoma, sans-serif">
+    <!-- Subtle Document Icon -->
+    <rect x="-36" y="-55" width="72" height="96" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2" />
+    <path d="M 6 -55 L 36 -25 L 36 -55 Z" fill="#E2E8F0" />
+    <line x1="-20" y1="-18" x2="12" y2="-18" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="-20" y1="-2" x2="20" y2="-2" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="-20" y1="14" x2="20" y2="14" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="-20" y1="30" x2="4" y2="30" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" />
+    
+    <!-- Placeholder Label -->
+    <text y="80" font-size="18" font-weight="bold" fill="#64748B">รูปภาพใบอนุญาต ฉบับที่ 2</text>
+    <text y="106" font-size="13" fill="#94A3B8">(พื้นที่สำหรับแสดงเอกสารตัวแทนจำหน่าย Partner Letter)</text>
+  </g>
+</svg>
+`)}`;
+
+export const DEFAULT_ACTIVITY_IMAGES: ActivityImage[] = [
+  {
+    id: 'act-1',
+    url: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80',
+    title: 'ทีมงานวิศวกรเข้าติดตั้งสายไฟเบอร์ออปติกตามมาตรฐาน AIS FIBRE 3',
+    description: 'เดินสายสัญญาณ Optical Fiber สปีดเต็มพิกัด พร้อมวัดค่าแสง (Optical Power) ตรวจสอบความเสถียร 100%',
+  },
+  {
+    id: 'act-2',
+    url: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1200&q=80',
+    title: 'ติดตั้งเราเตอร์ Wi-Fi 6 และทดสอบความเร็วอินเทอร์เน็ตหน้างาน',
+    description: 'ทดสอบ Speed Test จริงทุกจุด และจัดวางตำแหน่งกระจายสัญญาณให้ครอบคลุมทั่วทุกห้องในบ้าน',
+  },
+  {
+    id: 'act-3',
+    url: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?w=1200&q=80',
+    title: 'บริการรับสมัครและให้คำปรึกษาแพ็กเกจเน็ตบ้านด้วยความจริงใจ',
+    description: 'แอดมินฝ่ายขาย โฮมไฟเบอร์เนต999 ให้บริการเช็กพื้นที่รวดเร็ว แนะนำโปรโมชั่นที่คุ้มค่าที่สุด',
+  },
+  {
+    id: 'act-4',
+    url: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
+    title: 'กิจกรรมส่งมอบบริการและดูแลลูกค้าในพื้นที่อย่างใกล้ชิด',
+    description: 'พร้อมบริการหลังการขาย ดูแลใส่ใจตลอดอายุการใช้งานโดยทีมงานตัวแทนจำหน่ายอย่างเป็นทางการ',
+  },
+];
+
 export const INITIAL_ABOUT_SETTINGS: AboutUsSettings = {
   title_part1: 'ใบอนุญาตตัวแทนจำหน่าย',
   title_part2: 'อย่างเป็นทางการ',
   company_name: 'บริษัท โฮมไฟเบอร์เนต999 จำกัด',
   company_address: 'ที่ตั้ง บริษัท 512 หมู่ 1 ถนนรักสงบ ตำบลวิศิษฐ์ อำเภอเมือง จังหวัดบึงกาฬ 38000',
   doc1_title: 'หนังสือขออนุญาตใช้เครื่องหมายการค้าและประชาสัมพันธ์ AWN',
-  doc1_image: DEFAULT_CERTIFICATE_1,
+  doc1_image: BLANK_CERTIFICATE_1,
   doc2_title: 'หนังสือแสดงการเป็นตัวแทนจำหน่าย AIS 3BB FIBRE3 (Partner Letter)',
-  doc2_image: DEFAULT_CERTIFICATE_2,
+  doc2_image: BLANK_CERTIFICATE_2,
   dealer_codes: ['8800010', '8800011', '1004784'],
   authorized_by: 'บริษัท แอดวานซ์ ไวร์เลส เน็ทเวอร์ค จำกัด (AWN)',
+  show_certificates: true,
+  show_activities: true,
+  activity_images: DEFAULT_ACTIVITY_IMAGES,
   updated_at: new Date().toISOString(),
 };

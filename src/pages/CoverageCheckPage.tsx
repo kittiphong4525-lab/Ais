@@ -163,9 +163,9 @@ export const CoverageCheckPage: React.FC<CoverageCheckPageProps> = ({ onNavigate
           <MapPin className="w-3.5 h-3.5" />
           <span>FIBRE COVERAGE CHECKER</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-snug py-1">
-          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)]">ตรวจสอบพื้นที่ให้บริการ</span>{' '}
-          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)]">AIS Fibre 3</span>
+        <h1 className="flex flex-row flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-5xl font-black tracking-tight leading-snug py-1">
+          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)] shrink-0 whitespace-nowrap">ตรวจสอบพื้นที่ให้บริการ</span>
+          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)] shrink-0 whitespace-nowrap">AIS Fibre 3</span>
         </h1>
         <p className="text-xs sm:text-sm text-slate-400">
           เช็กระยะคู่สาย DP และความพร้อมในการเดินสายไฟเบอร์ออปติกถึงหน้าบ้านคุณ ทราบผลรวดเร็วภายใน 15-30 นาที ฟรีไม่มีค่าใช้จ่าย

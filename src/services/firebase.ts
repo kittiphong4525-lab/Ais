@@ -20,7 +20,7 @@ try {
   firestoreInstance = initializeFirestore(
     app,
     {
-      experimentalForceLongPolling: true,
+      experimentalAutoDetectLongPolling: true,
       ignoreUndefinedProperties: true,
     },
     firebaseConfigJson.firestoreDatabaseId || undefined

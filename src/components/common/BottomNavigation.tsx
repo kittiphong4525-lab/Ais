@@ -180,9 +180,9 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({ currentPath,
 
               {/* Call Buttons */}
               <div className="space-y-3 pt-4">
-                {/* Hotline 1: 062-193-9199 */}
+                {/* Hotline 1: 093-551-5442 */}
                 <a
-                  href="tel:0621939199"
+                  href="tel:0935515442"
                   className="w-full p-4 rounded-2xl bg-gradient-to-r from-emerald-500 via-lime-500 to-[#FF5500] hover:brightness-105 text-slate-950 font-black text-sm sm:text-base flex items-center justify-between shadow-xl shadow-orange-500/20 active:scale-[0.98] transition-all cursor-pointer"
                   id="mobile-call-hotline-1"
                 >
@@ -192,15 +192,15 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({ currentPath,
                     </div>
                     <div className="text-left">
                       <p className="text-xs text-slate-950 font-black uppercase tracking-wider">สายด่วนรับเรื่องเร็ว (เบอร์หลัก)</p>
-                      <p className="text-lg font-black text-slate-950 font-mono tracking-wide leading-tight">062-193-9199</p>
+                      <p className="text-lg font-black text-slate-950 font-mono tracking-wide leading-tight">093-551-5442</p>
                     </div>
                   </div>
                   <ChevronRight className="w-5 h-5 text-slate-950 stroke-[3]" />
                 </a>
 
-                {/* Hotline 2: 093-551-5442 */}
+                {/* Hotline 2: 062-193-9199 */}
                 <a
-                  href="tel:0935515442"
+                  href="tel:0621939199"
                   className={`w-full p-4 rounded-2xl border text-sm sm:text-base font-bold flex items-center justify-between active:scale-[0.98] transition-all cursor-pointer ${
                     isDark
                       ? 'bg-slate-900 border-slate-700 hover:border-emerald-500 text-white'
@@ -214,7 +214,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({ currentPath,
                     </div>
                     <div className="text-left">
                       <p className="text-xs text-slate-400 font-semibold">เจ้าหน้าที่ฝ่ายขายและข้อมูลติดตั้ง</p>
-                      <p className="text-base font-extrabold font-mono tracking-wide leading-tight">093-551-5442</p>
+                      <p className="text-base font-extrabold font-mono tracking-wide leading-tight">062-193-9199</p>
                     </div>
                   </div>
                   <ChevronRight className="w-5 h-5 text-slate-400" />

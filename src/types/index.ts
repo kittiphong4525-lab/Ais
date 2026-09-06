@@ -342,6 +342,13 @@ export interface ContactMessage {
   read: boolean;
 }
 
+export interface ActivityImage {
+  id: string;
+  url: string;
+  title?: string;
+  description?: string;
+}
+
 export interface AboutUsSettings {
   title_part1: string; // e.g. "ใบอนุญาตตัวแทนจำหน่าย"
   title_part2: string; // e.g. "อย่างเป็นทางการ"
@@ -353,6 +360,9 @@ export interface AboutUsSettings {
   doc2_image: string; // A4 certificate image URL or data URL
   dealer_codes?: string[];
   authorized_by?: string;
+  show_certificates?: boolean; // Set to false to hold off on showing license images
+  show_activities?: boolean; // Set to true to show activity slider
+  activity_images?: ActivityImage[]; // List of activity photos displayed in carousel
   updated_at?: string;
 }
 

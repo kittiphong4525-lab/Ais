@@ -56,9 +56,9 @@ export const FAQPage: React.FC<FAQPageProps> = ({ onNavigate }) => {
           <HelpCircle className="w-3.5 h-3.5" />
           <span>FREQUENTLY ASKED QUESTIONS</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-snug">
-          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)]">คำถามที่พบบ่อย</span>{' '}
-          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)]">(FAQ)</span>
+        <h1 className="flex flex-row flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-5xl font-black tracking-tight leading-snug">
+          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)] shrink-0 whitespace-nowrap">คำถามที่พบบ่อย</span>
+          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)] shrink-0 whitespace-nowrap">(FAQ)</span>
         </h1>
         <p className="text-xs sm:text-sm text-slate-400">
           รวบรวมข้อสงสัยเกี่ยวกับการสมัครติดตั้ง เอกสารที่ต้องใช้ ระยะเวลาดำเนินการ และการใช้งานอุปกรณ์

@@ -45,6 +45,7 @@ import {
 } from './seedData';
 import { INITIAL_ABOUT_SETTINGS } from '../data/defaultCertificates';
 import { StorageService } from './storage';
+import { sanitizeAboutSettingsImages } from '../utils/imageCompressor';
 
 // Helper to generate IDs
 export const generateId = (prefix = 'id'): string => {
@@ -209,7 +210,8 @@ export async function initializeCloudDatabaseIfNeeded(): Promise<void> {
     try {
       const aboutSnap = await getDoc(doc(db, 'about', 'company'));
       if (aboutSnap && !aboutSnap.exists()) {
-        await setDoc(doc(db, 'about', 'company'), INITIAL_ABOUT_SETTINGS);
+        const sanitized = await sanitizeAboutSettingsImages(INITIAL_ABOUT_SETTINGS);
+        await setDoc(doc(db, 'about', 'company'), sanitized);
       }
     } catch (err: any) {
       if (err?.code === 'permission-denied') {
@@ -237,8 +239,7 @@ export async function initializeCloudDatabaseIfNeeded(): Promise<void> {
   }
 }
 
-// Auto-trigger initialization on module load
-initializeCloudDatabaseIfNeeded().catch(() => {});
+// Initialization is triggered on app mount or lazily on first query
 
 export const ApiService = {
   // ------------------ PACKAGES ------------------
@@ -1388,11 +1389,49 @@ export const ApiService = {
   async getAboutUs(): Promise<AboutUsSettings> {
     try {
       await initializeCloudDatabaseIfNeeded();
-      const snap = await getDoc(doc(db, 'about', 'company'));
-      if (snap.exists()) {
-        return snap.data() as AboutUsSettings;
+      const [snap, certsSnap, actsSnap] = await Promise.all([
+        getDoc(doc(db, 'about', 'company')).catch(() => null),
+        getDoc(doc(db, 'about', 'certificates')).catch(() => null),
+        getDoc(doc(db, 'about', 'activities')).catch(() => null),
+      ]);
+
+      if (snap && snap.exists()) {
+        const data = { ...snap.data() } as AboutUsSettings;
+
+        // Merge split certificates document if present
+        if (certsSnap && certsSnap.exists()) {
+          const certsData = certsSnap.data();
+          if (certsData.doc1_image) data.doc1_image = certsData.doc1_image;
+          if (certsData.doc2_image) data.doc2_image = certsData.doc2_image;
+          if (certsData.doc1_title) data.doc1_title = certsData.doc1_title;
+          if (certsData.doc2_title) data.doc2_title = certsData.doc2_title;
+        }
+
+        // Merge split activities document if present
+        if (actsSnap && actsSnap.exists()) {
+          const actsData = actsSnap.data();
+          if (Array.isArray(actsData.activity_images) && actsData.activity_images.length > 0) {
+            data.activity_images = actsData.activity_images;
+          }
+        }
+
+        if (data.show_certificates === false || !data.doc1_image || data.doc1_image.includes('ขออนุญาตโฆษณาประชาสัมพันธ์')) {
+          const updated: AboutUsSettings = {
+            ...data,
+            doc1_image: INITIAL_ABOUT_SETTINGS.doc1_image,
+            doc2_image: INITIAL_ABOUT_SETTINGS.doc2_image,
+            show_certificates: true,
+          };
+          this.saveAboutUs(updated).catch(() => {});
+          return updated;
+        }
+        if (!data.activity_images || data.activity_images.length === 0) {
+          data.activity_images = INITIAL_ABOUT_SETTINGS.activity_images;
+          data.show_activities = true;
+        }
+        return data;
       }
-      return INITIAL_ABOUT_SETTINGS;
+      return StorageService.getAboutSettings() || INITIAL_ABOUT_SETTINGS;
     } catch (error: any) {
       if (error?.code === 'permission-denied') {
         handleFirestoreError(error, OperationType.GET, 'about/company');
@@ -1403,9 +1442,53 @@ export const ApiService = {
 
   async saveAboutUs(aboutData: AboutUsSettings): Promise<AboutUsSettings> {
     try {
-      await setDoc(doc(db, 'about', 'company'), aboutData, { merge: true });
-      return aboutData;
+      // 1. Sanitize & compress any heavy base64 images so they never exceed limits
+      const sanitized = (await sanitizeAboutSettingsImages(aboutData)) as AboutUsSettings;
+
+      // 2. Separate documents so each document has its own 1MB quota
+      const certsPayload = {
+        doc1_title: sanitized.doc1_title || '',
+        doc1_image: sanitized.doc1_image || '',
+        doc2_title: sanitized.doc2_title || '',
+        doc2_image: sanitized.doc2_image || '',
+        updated_at: sanitized.updated_at || new Date().toISOString(),
+      };
+
+      const actsPayload = {
+        activity_images: sanitized.activity_images || [],
+        updated_at: sanitized.updated_at || new Date().toISOString(),
+      };
+
+      // In main company document, store metadata and safe lightweight images
+      const companyPayload = {
+        title_part1: sanitized.title_part1 || '',
+        title_part2: sanitized.title_part2 || '',
+        company_name: sanitized.company_name || '',
+        company_address: sanitized.company_address || '',
+        dealer_codes: sanitized.dealer_codes || [],
+        authorized_by: sanitized.authorized_by || '',
+        show_certificates: sanitized.show_certificates !== false,
+        show_activities: sanitized.show_activities !== false,
+        doc1_title: sanitized.doc1_title || '',
+        doc2_title: sanitized.doc2_title || '',
+        // Only keep inline image if small (< 100KB), else rely on about/certificates
+        doc1_image: (sanitized.doc1_image && sanitized.doc1_image.length < 100000) ? sanitized.doc1_image : '',
+        doc2_image: (sanitized.doc2_image && sanitized.doc2_image.length < 100000) ? sanitized.doc2_image : '',
+        updated_at: sanitized.updated_at || new Date().toISOString(),
+      };
+
+      // Write to Firestore split documents in parallel
+      await Promise.all([
+        setDoc(doc(db, 'about', 'company'), companyPayload, { merge: true }),
+        setDoc(doc(db, 'about', 'certificates'), certsPayload, { merge: true }),
+        setDoc(doc(db, 'about', 'activities'), actsPayload, { merge: true }),
+      ]);
+
+      StorageService.saveAboutSettings(sanitized);
+      return sanitized;
     } catch (error) {
+      console.warn('Firestore about save warning, falling back to local storage:', error);
+      StorageService.saveAboutSettings(aboutData);
       handleFirestoreError(error, OperationType.WRITE, 'about/company');
     }
   },

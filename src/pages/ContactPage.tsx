@@ -67,9 +67,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           <Headphones className="w-3.5 h-3.5" />
           <span>CONTACT DEALER</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-snug">
-          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)]">ติดต่อเรา</span>{' '}
-          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)]">AIS FIBRE 3 By โฮมไฟเบอร์เนต999</span>
+        <h1 className="flex flex-row flex-nowrap items-center justify-center gap-1.5 sm:gap-2.5 whitespace-nowrap text-base sm:text-2xl md:text-3xl lg:text-5xl font-black tracking-tight leading-snug">
+          <span className="text-lime-300 drop-shadow-[0_2px_12px_rgba(190,242,100,0.3)] shrink-0 whitespace-nowrap">ติดต่อเรา</span>
+          <span className="text-[#FF5500] drop-shadow-[0_2px_12px_rgba(255,85,0,0.4)] shrink-0 whitespace-nowrap">AIS FIBRE 3 By โฮมไฟเบอร์เนต999</span>
         </h1>
         <p className="text-xs sm:text-sm text-slate-300 font-medium">
           รับติดเน็ตบ้านสมัคร ออนไลน์ได้ทั่วประเทศ ให้คำปรึกษาแพ็กเกจและบริการติดตั้งทั่วไทย

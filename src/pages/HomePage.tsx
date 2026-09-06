@@ -171,33 +171,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
       {/* 8. Installation Steps (4 Steps) */}
       <InstallationStepsSection onCheckArea={() => onNavigate('/check-area')} />
 
-      {/* Official Dealer Authorization Banner Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-emerald-950/40 to-slate-900 border border-emerald-500/30 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 text-center md:text-left">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/40">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>ตัวแทนจำหน่ายอย่างเป็นทางการ AIS FIBRE 3</span>
-            </div>
-            <h3 className="text-xl sm:text-2xl font-black text-white">
-              <span className="text-lime-300">ใบอนุญาตตัวแทนจำหน่าย</span>{' '}
-              <span className="text-[#FF5500]">อย่างเป็นทางการ</span>
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-xl">
-              บริษัท โฮมไฟเบอร์เนต999 จำกัด ได้รับการแต่งตั้งและอนุญาตใช้เครื่องหมายการค้าจาก AWN อย่างถูกต้อง
-            </p>
-          </div>
-          <button
-            onClick={() => onNavigate('/about')}
-            className="shrink-0 px-6 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-lime-400 hover:from-emerald-400 hover:to-lime-300 text-slate-950 font-black text-xs sm:text-sm shadow-lg shadow-emerald-950 flex items-center gap-2 transition-all cursor-pointer hover:scale-105"
-          >
-            <Award className="w-4 h-4" />
-            <span>ดูเอกสารอนุญาตฉบับเต็ม</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-      </section>
-
       {/* 9. Promotional Banners */}
       {promotions.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
