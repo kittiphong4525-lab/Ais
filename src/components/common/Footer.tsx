@@ -149,12 +149,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAdminAuth }) =
               </li>
               <li>
                 <a
-                  href="https://line.me/ti/p/@aisfibre999"
+                  href="https://line.me/ti/p/@aisfibrefanclub"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-emerald-400 transition-colors flex items-center gap-1.5"
                 >
-                  <ChevronRight className="w-3.5 h-3.5 text-emerald-500" /> สมัครติดตั้ง (LINE @aisfibre999)
+                  <ChevronRight className="w-3.5 h-3.5 text-emerald-500" /> สมัครติดตั้ง (LINE @aisfibrefanclub)
                 </a>
               </li>
               <li>
@@ -232,7 +232,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAdminAuth }) =
               </a>
 
               <a
-                href="https://line.me/ti/p/@aisfibre999"
+                href="https://line.me/ti/p/@aisfibrefanclub"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 px-3.5 py-2.5 rounded-xl bg-slate-900/90 hover:bg-emerald-950/80 border border-[#06C755]/50 hover:border-[#06C755] text-white transition-all shadow-sm hover:scale-[1.01] group"
@@ -242,7 +242,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAdminAuth }) =
                 </div>
                 <div className="flex-1 flex items-center">
                   <span className="text-base sm:text-lg font-bold text-white tracking-wide font-mono">
-                    @aisfibre999
+                    @aisfibrefanclub
                   </span>
                 </div>
               </a>

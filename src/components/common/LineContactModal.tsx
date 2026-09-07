@@ -71,7 +71,7 @@ export const LineContactModal: React.FC<LineContactModalProps> = ({
               </div>
               <div>
                 <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-[#06C755]/20 text-[#06C755] border border-[#06C755]/30 uppercase tracking-wider">
-                  LINE Official @aisfibre999
+                  LINE Official @aisfibrefanclub
                 </span>
                 <h3 className="text-xl font-black text-white mt-1">
                   ติดต่อฝ่ายขาย AIS FIBRE 3
@@ -91,7 +91,7 @@ export const LineContactModal: React.FC<LineContactModalProps> = ({
               <div className="w-24 h-24 rounded-xl bg-white p-2 flex items-center justify-center shrink-0 shadow-md">
                 <div className="w-full h-full bg-slate-900 rounded flex flex-col items-center justify-center text-white text-[10px] text-center font-mono font-bold leading-tight p-1">
                   <QrCode className="w-8 h-8 text-[#06C755] mb-0.5" />
-                  <span>@aisfibre999</span>
+                  <span>@aisfibrefanclub</span>
                 </div>
               </div>
 
@@ -100,13 +100,13 @@ export const LineContactModal: React.FC<LineContactModalProps> = ({
                   สแกน QR Code หรือกดปุ่มด้านล่างเพื่อเปิดแชท LINE คุยกับเจ้าหน้าที่ได้ทันที (เปิดบริการ ทุกวัน 08.00 - 17.00 น.)
                 </p>
                 <a
-                  href="https://line.me/ti/p/@aisfibre999"
+                  href="https://line.me/ti/p/@aisfibrefanclub"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white text-xs font-bold shadow-lg shadow-[#06C755]/25 transition-all transform active:scale-98"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  <span>เปิด LINE แชททันที (@aisfibre999)</span>
+                  <span>เปิด LINE แชททันที (@aisfibrefanclub)</span>
                   <ExternalLink className="w-3.5 h-3.5 opacity-80" />
                 </a>
               </div>
@@ -175,7 +175,7 @@ export const LineContactModal: React.FC<LineContactModalProps> = ({
             </p>
             <div className="pt-4 flex justify-center gap-3">
               <a
-                href="https://line.me/ti/p/@aisfibre999"
+                href="https://line.me/ti/p/@aisfibrefanclub"
                 target="_blank"
                 rel="noreferrer"
                 className="px-5 py-2.5 rounded-xl bg-[#06C755] text-white text-xs font-bold flex items-center gap-2"

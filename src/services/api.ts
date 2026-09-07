@@ -199,6 +199,22 @@ export async function initializeCloudDatabaseIfNeeded(): Promise<void> {
       const settingSnap = await getDoc(doc(db, 'settings', 'main'));
       if (settingSnap && !settingSnap.exists()) {
         await setDoc(doc(db, 'settings', 'main'), INITIAL_SETTINGS);
+      } else if (settingSnap && settingSnap.exists()) {
+        const currentData = settingSnap.data();
+        if (
+          currentData.line_id === '@aisfibre999' ||
+          currentData.line_id === '@aisfibre3' ||
+          !currentData.line_id
+        ) {
+          await setDoc(
+            doc(db, 'settings', 'main'),
+            {
+              line_id: INITIAL_SETTINGS.line_id,
+              line_url: INITIAL_SETTINGS.line_url,
+            },
+            { merge: true }
+          );
+        }
       }
     } catch (err: any) {
       if (err?.code === 'permission-denied') {

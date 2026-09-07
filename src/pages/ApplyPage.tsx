@@ -291,13 +291,13 @@ export const ApplyPage: React.FC<ApplyPageProps> = ({
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 max-w-md mx-auto">
             <a
-              href="https://line.me/ti/p/@aisfibre999"
+              href="https://line.me/ti/p/@aisfibrefanclub"
               target="_blank"
               rel="noreferrer"
               className="w-full py-3.5 px-6 rounded-xl bg-[#06C755] hover:bg-[#05b04a] text-white font-bold text-xs sm:text-sm shadow-xl flex items-center justify-center gap-2"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>ติดต่อแอดมิน LINE (@aisfibre999)</span>
+              <span>ติดต่อแอดมิน LINE (@aisfibrefanclub)</span>
             </a>
             <button
               onClick={() => onNavigate('/articles')}

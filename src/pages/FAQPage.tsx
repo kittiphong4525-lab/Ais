@@ -157,13 +157,13 @@ export const FAQPage: React.FC<FAQPageProps> = ({ onNavigate }) => {
             <span>093-551-5442</span>
           </a>
           <a
-            href="https://line.me/ti/p/@aisfibre999"
+            href="https://line.me/ti/p/@aisfibrefanclub"
             target="_blank"
             rel="noreferrer"
             className="px-4 py-2.5 rounded-xl bg-[#06C755] hover:bg-[#05b04a] text-white text-xs font-bold transition-colors flex items-center gap-1.5"
           >
             <MessageCircle className="w-3.5 h-3.5" />
-            <span>LINE: @aisfibre999</span>
+            <span>LINE: @aisfibrefanclub</span>
           </a>
         </div>
       </div>

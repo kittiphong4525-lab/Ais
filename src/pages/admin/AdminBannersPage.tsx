@@ -729,7 +729,7 @@ export const AdminBannersPage: React.FC = () => {
                     className="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:border-emerald-500 focus:outline-none"
                   />
                   <div className="flex gap-1.5 pt-1">
-                    {['/packages', '/apply', '/check-area', 'https://line.me/ti/p/@aisfibre999'].map((l) => (
+                    {['/packages', '/apply', '/check-area', 'https://line.me/ti/p/@aisfibrefanclub'].map((l) => (
                       <button
                         key={l}
                         type="button"

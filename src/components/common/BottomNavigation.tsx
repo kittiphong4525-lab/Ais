@@ -15,7 +15,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({ currentPath,
   const navItems = [
     { label: 'หน้าแรก', path: '/', icon: Home, id: 'bnav-home' },
     { label: 'แพ็กเกจ', path: '/packages', icon: Sliders, id: 'bnav-packages' },
-    { label: 'สมัครติดตั้ง', href: 'https://line.me/ti/p/@aisfibre999', icon: FileCheck, isCenter: true, isExternal: true, id: 'bnav-apply' },
+    { label: 'สมัครติดตั้ง', href: 'https://line.me/ti/p/@aisfibrefanclub', icon: FileCheck, isCenter: true, isExternal: true, id: 'bnav-apply' },
     { label: 'เช็คพื้นที่', path: '/check-area', icon: MapPin, id: 'bnav-area' },
     { label: 'โทรด่วน', isAction: true, icon: PhoneCall, id: 'bnav-call' },
   ];
@@ -46,7 +46,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({ currentPath,
                 <a
                   key={item.label}
                   id={item.id}
-                  href={item.href || 'https://line.me/ti/p/@aisfibre999'}
+                  href={item.href || 'https://line.me/ti/p/@aisfibrefanclub'}
                   target="_blank"
                   rel="noreferrer"
                   className="flex flex-col items-center -mt-6 group focus:outline-none relative"
@@ -222,7 +222,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({ currentPath,
 
                 {/* LINE Official Link */}
                 <a
-                  href="https://line.me/ti/p/@aisfibre999"
+                  href="https://line.me/ti/p/@aisfibrefanclub"
                   target="_blank"
                   rel="noreferrer"
                   className="w-full p-3.5 rounded-2xl bg-[#06C755] hover:bg-[#05b04a] text-white font-black text-sm flex items-center justify-between shadow-md active:scale-[0.98] transition-all cursor-pointer"
@@ -234,7 +234,7 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({ currentPath,
                     </div>
                     <div className="text-left">
                       <p className="text-xs text-emerald-100 font-medium">สมัครผ่านไลน์ ส่งโลเคชันเช็คพื้นที่ได้ทันที</p>
-                      <p className="text-sm font-black leading-tight">LINE ID: @aisfibre999</p>
+                      <p className="text-sm font-black leading-tight">LINE ID: @aisfibrefanclub</p>
                     </div>
                   </div>
                   <ChevronRight className="w-5 h-5 text-white" />

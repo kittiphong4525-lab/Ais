@@ -273,12 +273,12 @@ export const PackageDetailPage: React.FC<PackageDetailPageProps> = ({
         {/* Action Bar */}
         <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center gap-4">
           <button
-            onClick={() => window.open('https://line.me/ti/p/@aisfibre999', '_blank')}
+            onClick={() => window.open('https://line.me/ti/p/@aisfibrefanclub', '_blank')}
             className="w-full sm:flex-1 py-4 px-6 rounded-xl bg-gradient-to-r from-emerald-400 via-lime-400 to-orange-500 hover:from-emerald-300 hover:via-lime-300 hover:to-orange-400 text-slate-950 font-black text-sm shadow-xl shadow-orange-500/20 active:scale-98 transition-all flex items-center justify-center gap-2"
             id="btn-apply-package-detail"
           >
             <Zap className="w-4 h-4 fill-slate-950" />
-            <span>สมัครแพ็กเกจนี้ทันที (ทัก LINE @aisfibre999)</span>
+            <span>สมัครแพ็กเกจนี้ทันที (ทัก LINE @aisfibrefanclub)</span>
           </button>
 
           <button

@@ -64,9 +64,9 @@ export const PromotionCard: React.FC<PromotionCardProps> = ({ promo, onAction })
             <button
               type="button"
               onClick={() => {
-                const target = promo.cta_link || promo.ctaLink || 'https://line.me/ti/p/@aisfibre999';
+                const target = promo.cta_link || promo.ctaLink || 'https://line.me/ti/p/@aisfibrefanclub';
                 if (target === '/apply' || target.includes('apply')) {
-                  window.open('https://line.me/ti/p/@aisfibre999', '_blank');
+                  window.open('https://line.me/ti/p/@aisfibrefanclub', '_blank');
                 } else if (target.startsWith('http')) {
                   window.open(target, '_blank');
                 } else {

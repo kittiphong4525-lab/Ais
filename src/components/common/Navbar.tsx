@@ -159,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
 
             <a
-              href="https://line.me/ti/p/@aisfibre999"
+              href="https://line.me/ti/p/@aisfibrefanclub"
               target="_blank"
               rel="noreferrer"
               className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#06C755] to-[#04a044] hover:brightness-110 text-white font-bold text-xs flex items-center gap-2 shadow-md shadow-emerald-950/50 hover:scale-[1.02] active:scale-95 transition-all whitespace-nowrap"
@@ -313,13 +313,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               </div>
 
               <a
-                href="https://line.me/ti/p/@aisfibre999"
+                href="https://line.me/ti/p/@aisfibrefanclub"
                 target="_blank"
                 rel="noreferrer"
                 className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-[#06C755] to-[#04a044] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md hover:brightness-110 transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>แชท LINE สมัครติดตั้ง: @aisfibre999</span>
+                <span>แชท LINE สมัครติดตั้ง: @aisfibrefanclub</span>
               </a>
             </div>
           </motion.div>

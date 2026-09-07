@@ -225,13 +225,13 @@ export const CoverageCheckPage: React.FC<CoverageCheckPageProps> = ({ onNavigate
           {/* Actions */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4 max-w-md mx-auto">
             <a
-              href="https://line.me/ti/p/@aisfibre999"
+              href="https://line.me/ti/p/@aisfibrefanclub"
               target="_blank"
               rel="noreferrer"
               className="w-full py-3 px-5 rounded-xl bg-[#06C755] hover:bg-[#05b04a] text-white font-bold text-xs transition-all shadow-md flex items-center justify-center gap-1.5"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>ทัก LINE แจ้งช่าง (@aisfibre999)</span>
+              <span>ทัก LINE แจ้งช่าง (@aisfibrefanclub)</span>
             </a>
             <button
               onClick={() => onNavigate('/articles')}

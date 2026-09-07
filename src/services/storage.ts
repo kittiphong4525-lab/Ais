@@ -201,6 +201,7 @@ export const StorageService = {
       current.phone_primary === '02-999-8888' ||
       current.line_id === '@aisfibre999' ||
       current.line_id === '@aisfibre3' ||
+      current.line_id !== '@aisfibrefanclub' ||
       !current.address ||
       current.address.includes('พหลโยธิน') ||
       current.address.includes('เน็ตเวิร์คทาวเวอร์')

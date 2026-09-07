@@ -365,13 +365,13 @@ export const HeroPromoSlider: React.FC<HeroPromoSliderProps> = ({
                 onClick={() =>
                   onOpenLine
                     ? onOpenLine(currentPromo.packageName)
-                    : window.open('https://line.me/ti/p/@aisfibre999', '_blank')
+                    : window.open('https://line.me/ti/p/@aisfibrefanclub', '_blank')
                 }
                 className="w-full py-2.5 px-3 rounded-xl bg-[#06C755] hover:bg-[#05b34c] text-white font-black text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md hover:scale-[1.01] active:scale-95 transition-all"
                 id="btn-promo-line-chat"
               >
                 <MessageCircle className="w-4 h-4 shrink-0" />
-                <span>แอดไลน์สมัครติดตั้ง (@aisfibre999)</span>
+                <span>แอดไลน์สมัครติดตั้ง (@aisfibrefanclub)</span>
               </button>
             </div>
 

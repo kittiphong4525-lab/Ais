@@ -88,14 +88,14 @@ export const FloatingContact: React.FC<FloatingContactProps> = ({ onNavigate, on
           </a>
 
           <button
-            onClick={() => onOpenLineModal ? onOpenLineModal() : window.open('https://line.me/ti/p/@aisfibre999', '_blank')}
+            onClick={() => onOpenLineModal ? onOpenLineModal() : window.open('https://line.me/ti/p/@aisfibrefanclub', '_blank')}
             className="flex items-center gap-3 px-3.5 py-2.5 rounded-2xl bg-[#06C755]/20 hover:bg-[#06C755]/30 border-2 border-[#06C755]/60 text-white transition-all text-sm font-semibold group text-left shadow-md"
           >
             <div className="w-8 h-8 rounded-xl bg-[#06C755] text-white flex items-center justify-center font-bold group-hover:scale-110 transition-transform shadow-md shadow-[#06C755]/40 shrink-0">
               <MessageCircle className="w-4 h-4" />
             </div>
             <div className="flex items-center">
-              <span className="font-extrabold text-white text-base">@aisfibre999</span>
+              <span className="font-extrabold text-white text-base">@aisfibrefanclub</span>
             </div>
           </button>
 

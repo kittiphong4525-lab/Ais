@@ -20,7 +20,7 @@ export const MiddleBanner: React.FC<MiddleBannerProps> = ({
     if (!banner.cta_link) return;
 
     if (banner.cta_link === '/apply' || banner.cta_link.includes('apply')) {
-      window.open('https://line.me/ti/p/@aisfibre999', '_blank');
+      window.open('https://line.me/ti/p/@aisfibrefanclub', '_blank');
       return;
     }
 

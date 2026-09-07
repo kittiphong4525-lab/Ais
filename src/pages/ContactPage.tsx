@@ -116,7 +116,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
               </a>
 
               <a
-                href="https://line.me/ti/p/@aisfibre999"
+                href="https://line.me/ti/p/@aisfibrefanclub"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-4 p-4 rounded-2xl bg-[#06C755]/15 border-2 border-[#06C755]/50 hover:border-[#06C755] text-slate-200 transition-all group shadow-md"
@@ -126,7 +126,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-emerald-300">LINE Official Account</p>
-                  <p className="text-xl sm:text-2xl font-black text-white tracking-wide">@aisfibre999</p>
+                  <p className="text-xl sm:text-2xl font-black text-white tracking-wide">@aisfibrefanclub</p>
                   <p className="text-xs text-slate-300">แชทสอบถาม เช็คสิทธิ์ ส่งเอกสารได้ทันที</p>
                 </div>
               </a>

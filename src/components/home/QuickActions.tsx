@@ -23,7 +23,7 @@ export const QuickActions: React.FC<QuickActionsProps> = ({ onNavigate }) => {
       title: 'สมัครติดตั้ง',
       subtitle: 'ทักไลน์แจ้งข้อมูลติดตั้งได้ทันที',
       icon: PackagePlus,
-      path: 'https://line.me/ti/p/@aisfibre999',
+      path: 'https://line.me/ti/p/@aisfibrefanclub',
       isExternal: true,
       iconBg: 'bg-teal-100 text-teal-700 border-teal-300',
       badge: 'รับสิทธิ์ฟรีค่าแรกเข้า',
